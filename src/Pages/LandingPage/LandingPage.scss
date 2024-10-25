@@ -14,10 +14,21 @@
 // }
 
 .landing-page {
-  background: radial-gradient(
-    circle at bottom,
-    var(--color3) 60%,
-    var(--color2),
-    // var(--color1)
-  );
+  background: radial-gradient(circle at bottom, var(--color4) 20%, var(--color3) 60%, var(--color1));
+
+  &.slide-down {
+    animation: slideDown 1s forwards;
+  }
+
+  // Animation for sliding down
+  @keyframes slideDown {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
 }

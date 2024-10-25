@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Toast } from "primereact/toast";
-import { useAppContext } from "./Services/AppContext";
 import "./App.scss";
+import useToastStore from "./Services/Stores/toastMessageStore";
 
 const DocumentTitleUpdater = () => {
   const location = useLocation();
@@ -11,7 +11,9 @@ const DocumentTitleUpdater = () => {
     const titleMap: { [key: string]: string } = {
       "/": "Project Blackcurrant",
       "/home": "Project Blackcurrant | Home",
-      "/string-manipulation": "Project Blackcurrant | String Manipulation",
+      "/play-with-strings": "Project Blackcurrant | Play with Strings",
+      "/play-with-numbers": "Project Blackcurrant | Play with Numbers",
+      "/web-apis": "Project Blackcurrant | Web APIs",
     };
 
     document.title =
@@ -22,24 +24,21 @@ const DocumentTitleUpdater = () => {
 };
 
 function App() {
-  const { dispatch, state } = useAppContext();
-  const myToast = useRef<Toast>(null);
+  const toastRef = useRef<Toast>(null);
+  const setToastRef = useToastStore((state) => state.setToastRef);
 
   useEffect(() => {
-    dispatch?.({
-      type: "SET_TOAST_REF",
-      payload: myToast.current as Toast,
-    });
-  }, []);
+    setToastRef(toastRef);
+  }, [setToastRef]);
 
-  useEffect(() => {
-    sessionStorage.setItem(`bananaAppData`, JSON.stringify(state));
-  }, [state]);
+  // useEffect(() => {
+  //   sessionStorage.setItem(`bananaAppData`, JSON.stringify(state));
+  // }, [state]);
 
   return (
-    <div className="w-screen h-[100dvh] bg-color3">
+    <div className="w-screen h-[100dvh] bg-color1">
       <DocumentTitleUpdater />
-      <Toast ref={myToast} />
+      <Toast ref={toastRef} />
       <Outlet />
     </div>
   );

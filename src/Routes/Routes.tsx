@@ -25,8 +25,8 @@ const Router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<HomePage />} />
-      <Route path="/string-manipulation" element={<StringManipulation />} />
-      <Route path="/number" element={<NumberManipulation />} />
+      <Route path="/play-with-strings" element={<StringManipulation />} />
+      <Route path="/play-with-numbers" element={<NumberManipulation />} />
       <Route path="/web-apis" element={<WebAPI />} />
       <Route path="*" element={<PageNotFound />} />
     </Route>

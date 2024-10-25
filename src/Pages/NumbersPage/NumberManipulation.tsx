@@ -1,8 +1,7 @@
 import { Button } from "primereact/button";
 import Layout from "../../Layout/Layout";
-import { NUMBER_OPTIONS, numberFunctions } from "../../Services/Constants";
+import { NUMBER_OPTIONS } from "../../Services/Constants";
 import useNumberFunctionsStore from "../../Services/Stores/numberFunctionsStore";
-import { useState } from "react";
 import SingleInput from "../../Components/NumberFunctions/SingleInput/SingleInput";
 import DoubleInput from "../../Components/NumberFunctions/DoubleInput/DoubleInput";
 import SwiperContainer from "../../Components/SwiperContainer/SwiperContainer";
@@ -15,7 +14,7 @@ const NumberManipulation = () => {
     <Layout>
       <div className="custom-scrollbar w-full h-full p-2 md:p-3 lg:p-4 flex flex-col gap-y-4 sm:pa-y-6 md:gap-y-10 overflow-y-auto">
         <h1 className="text-2xl xs:text-3xl mdl:text-4xl text-color5 font-heading select-none">
-          Number Manipulation
+          Play with Numbers
         </h1>
 
         {/* <div className="flex flex-nowrap justify-start items-center gap-x-2 md:gap-x-3 overflow-x-auto scrollbar-hide">
