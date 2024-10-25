@@ -17,6 +17,9 @@ const StringManipulation = lazy(
 const NumberManipulation = lazy(
   () => import("../Pages/NumbersPage/NumberManipulation")
 );
+const PlayWithJsDates = lazy(
+  () => import("./../Pages/DatesPage/PlayWithDatesPage")
+);
 const WebAPI = lazy(() => import("../Pages/WebAPIsPage/WebAPI"));
 const PageNotFound = lazy(() => import("../Pages/PageNotFound/PageNotFound"));
 
@@ -27,6 +30,7 @@ const Router = createBrowserRouter(
       <Route path="/home" element={<HomePage />} />
       <Route path="/play-with-strings" element={<StringManipulation />} />
       <Route path="/play-with-numbers" element={<NumberManipulation />} />
+      <Route path="/play-with-dates" element={<PlayWithJsDates />} />
       <Route path="/web-apis" element={<WebAPI />} />
       <Route path="*" element={<PageNotFound />} />
     </Route>
