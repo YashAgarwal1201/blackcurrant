@@ -22,23 +22,23 @@ const LandingPage = () => {
 
   // Attach event listeners when the component mounts
   useEffect(() => {
-    const handleKeyPress = () => {
-      if (!animateOut) {
-        // Prevent multiple triggers
+    const handleKeyPress = (event) => {
+      if (!animateOut && (event.key === "Enter" || event.type === "click")) {
+        // Trigger navigation only on click or Enter key
         goToHomePage();
       }
     };
 
     // Adding event listeners
-    window.addEventListener("click", goToHomePage);
+    window.addEventListener("click", handleKeyPress);
     window.addEventListener("keydown", handleKeyPress);
 
     // Cleanup function to remove event listeners
     return () => {
-      window.removeEventListener("click", goToHomePage);
+      window.removeEventListener("click", handleKeyPress);
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [navigate, animateOut]); // Add animateOut to dependencies to prevent memory leaks
+  }, [navigate, animateOut]);
 
   useEffect(() => {
     setShowContent(true);
@@ -46,9 +46,14 @@ const LandingPage = () => {
 
   return (
     <div
-      className={`landing-page backdrop-blur-md w-screen h-screen flex flex-col justify-center items-center text-color1 bg-color3 transition-all duration-1000 transform ${
+      className={`landing-page backdrop-blur-md w-screen h-screen flex flex-col justify-center items-center text-color1 bg-color1 transition-all duration-1000 transform ${
+        // showContent && !animateOut
+        //   ? "translate-y-0 opacity-100"
+        //   : "-translate-y-full opacity-0"
         showContent && !animateOut
           ? "translate-y-0 opacity-100"
+          : animateOut
+          ? "slide-down"
           : "-translate-y-full opacity-0"
       } text-center`}
     >

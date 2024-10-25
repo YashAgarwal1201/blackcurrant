@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  // const { showToast } = useAppContext();
 
   return (
     <Layout>
@@ -17,8 +16,8 @@ const LandingPage = () => {
         <div className="w-full h-full flex justify-center items-center">
           <div className="w-full sm:w-[75%] md:w-[560px] lg:w-[640px] aspect-square grid grid-cols-2 gap-4">
             {[
-              { title: "Play with Strings", link: "/string-manipulation" },
-              { title: "Play with Numbers", link: "/number" },
+              { title: "Play with Strings", link: "/play-with-strings" },
+              { title: "Play with Numbers", link: "/play-with-numbers" },
               { title: "Web APIs", link: "/web-apis" },
             ]?.map((value, key) => (
               <Card

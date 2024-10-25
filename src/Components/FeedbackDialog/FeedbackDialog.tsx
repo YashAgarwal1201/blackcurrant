@@ -8,10 +8,8 @@ const FeedbackDialog = ({ showFeedbackDialog, setShowFeedbackDialog }) => {
   const {
     handleSubmit,
     reset,
-    watch,
     register,
     formState: { errors, isValid },
-    setValue,
   } = useForm({
     defaultValues: { name: "", email: "", message: "" },
     mode: "onChange",
@@ -26,7 +24,6 @@ const FeedbackDialog = ({ showFeedbackDialog, setShowFeedbackDialog }) => {
 
   const onDiscard = () => {
     reset(); // Reset the form
-    setShowFeedbackDialog(false); // Close the dialog
   };
 
   return (
@@ -46,9 +43,14 @@ const FeedbackDialog = ({ showFeedbackDialog, setShowFeedbackDialog }) => {
       <div className="w-full bg-color4 rounded-3xl py-4 px-4">
         <form className="feedback-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-section w-full py-4 px-2 flex flex-col gap-y-2 sm:gap-y-3 rounded-xl">
-            <label className="font-subHeading text-lg sm:text-xl">
-              <span className="pi pi-id-card mr-4"></span>Name
-            </label>
+            <div className="flex justify-between items-center">
+              <label className="font-subHeading text-lg sm:text-xl">
+                <span className="pi pi-id-card mr-4"></span>Name
+              </label>
+              {errors.name && (
+                <small className="text-red-500">{errors.name.message}</small>
+              )}
+            </div>
             <InputText
               className="font-content p-4 text-base sm:text-lg text-color5 bg-color2 rounded-3xl"
               {...register("name", { required: "Name is required" })}
@@ -57,9 +59,14 @@ const FeedbackDialog = ({ showFeedbackDialog, setShowFeedbackDialog }) => {
           <div className="mx-2 my-1 p-0 max-w-full h-[1.5px] bg-color2" />
 
           <div className="form-section w-full py-4 px-2 flex flex-col gap-y-2 sm:gap-y-3 rounded-xl">
-            <label className="font-subHeading text-lg sm:text-xl">
-              <span className="pi pi-envelope mr-4"></span>E-mail
-            </label>
+            <div className="flex justify-between items-center">
+              <label className="font-subHeading text-lg sm:text-xl">
+                <span className="pi pi-envelope mr-4"></span>E-mail
+              </label>
+              {errors.email && (
+                <small className="text-red-500">{errors.email.message}</small>
+              )}
+            </div>
             <InputText
               className="font-content p-4 text-base sm:text-lg text-color5 bg-color2 rounded-3xl"
               type="email"
@@ -75,9 +82,14 @@ const FeedbackDialog = ({ showFeedbackDialog, setShowFeedbackDialog }) => {
           <div className="mx-2 my-1 p-0 max-w-full h-[1.5px] bg-color2" />
 
           <div className="form-section w-full py-4 px-2 flex flex-col gap-y-2 sm:gap-y-3 rounded-xl">
-            <label className="font-subHeading text-lg sm:text-xl">
-              <span className="pi pi-pencil mr-4"></span>Message
-            </label>
+            <div className="flex justify-between items-center">
+              <label className="font-subHeading text-lg sm:text-xl">
+                <span className="pi pi-pencil mr-4"></span>Message
+              </label>
+              {errors.message && (
+                <small className="text-red-500">{errors.message.message}</small>
+              )}
+            </div>
             <InputTextarea
               className="h-[150px] p-4 font-content text-base sm:text-lg text-color5 bg-color2 rounded-3xl resize-none"
               maxLength={300}

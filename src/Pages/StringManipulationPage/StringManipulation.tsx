@@ -31,7 +31,7 @@ const StringManipulation = () => {
     <Layout>
       <div className="custom-scrollbar w-full h-full p-2 md:p-3 lg:p-4 flex flex-col gap-y-4 sm:pa-y-6 md:gap-y-10 overflow-y-auto">
         <h1 className="text-2xl xs:text-3xl mdl:text-4xl text-color5 font-heading select-none">
-          String Manipulation
+          Play with Strings
         </h1>
 
         {/* <div className="flex flex-nowrap justify-start items-center gap-x-2 md:gap-x-3 overflow-x-auto">
@@ -60,7 +60,7 @@ const StringManipulation = () => {
               key={key}
               label={value}
               // className="h-full px-5 flex-grow flex-shrink-0 text-xs sm:text-sm md:text-base lg:text-lg text-color4 font-content bg-transparent rounded-full border md:border-2 border-color4"
-              className={`h-8 md:h-9 lg:h-10 px-5 flex-shrink-0 text-xs sm:text-sm md:text-base lg:text-lg font-content rounded-full border md:border-2 ${
+              className={`swiper-slide !w-auto mr-2 h-8 md:h-9 lg:h-10 px-5 text-xs sm:text-sm md:text-base lg:text-lg flex-shrink-0 font-content rounded-full border md:border-2 ${
                 selectedStringFunction === value
                   ? "bg-color4 text-color1 border-color4 pointer-events-none"
                   : "bg-transparent text-color4 border-color4 pointer-events-auto"
