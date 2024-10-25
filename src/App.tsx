@@ -13,6 +13,7 @@ const DocumentTitleUpdater = () => {
       "/home": "Project Blackcurrant | Home",
       "/play-with-strings": "Project Blackcurrant | Play with Strings",
       "/play-with-numbers": "Project Blackcurrant | Play with Numbers",
+      "/play-with-dates": "Project Blackcurrant | Play with JS Dates",
       "/web-apis": "Project Blackcurrant | Web APIs",
     };
 

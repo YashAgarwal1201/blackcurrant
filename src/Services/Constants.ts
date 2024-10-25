@@ -1,4 +1,15 @@
 import {
+  addDaysToDate,
+  calculateAge,
+  convertTimestampToDate,
+  getCurrentDate,
+  getDaysBetweenDates,
+  getFirstDayOfMonth,
+  getLastDayOfMonth,
+  isLeapYear,
+  isWeekend,
+} from "./DateFunctions";
+import {
   binaryToNumber,
   factorial,
   fibonacci,
@@ -30,19 +41,61 @@ export const TOAST_MSGS = {
   LINK_IN_NEW_TAB: "This app is opened in new tab.",
 };
 
-export const STRING_OPTIONS = [
-  "Alternate Case",
-  "Camel Case",
-  "Pascal Case",
-  "Snake Case",
-  "Screaming Snake Case",
-  "Kebab Case",
-  "Reverse",
-  "Randomise Case",
-  "No Whitespace",
-  "Binary String",
-  "ASCII String",
-];
+// export const STRING_OPTIONS = [
+//   "Alternate Case",
+//   "Camel Case",
+//   "Pascal Case",
+//   "Snake Case",
+//   "Screaming Snake Case",
+//   "Kebab Case",
+//   "Reverse",
+//   "Randomise Case",
+//   "No Whitespace",
+//   "Binary String",
+//   "ASCII String",
+// ];
+
+// export const stringFunctions = {
+//   "Alternate Case": alternateCase,
+//   Reverse: reverseString,
+//   "Pascal Case": toPascalCase,
+//   "Camel Case": toCamelCase,
+//   "Kebab Case": toKebabCase,
+//   "Snake Case": toSnakeCase,
+//   "Screaming Snake Case": toScreamingSnakeCase,
+//   "Randomise Case": randomizeCase,
+//   "No Whitespace": removeWhitespace,
+//   "Binary String": stringToBinary,
+//   "ASCII String": stringToAscii,
+// };
+
+// export const NUMBER_OPTIONS = [
+//   "Number to HEX",
+//   "HEX to Number",
+//   "Number to Binary",
+//   "Binary to Number",
+//   "Is Prime",
+//   "Factorial",
+//   "Fibonacci",
+//   "Sum of Digits",
+//   "Reverse of Number",
+//   "Greatest Common Divisor",
+//   "Least Common Multiple",
+// ];
+
+// export const numberFunctions = {
+//   "Number to HEX": numberToHex,
+//   "HEX to Number": hexToNumber,
+//   "Number to Binary": numberToBinary,
+//   "Binary to Number": binaryToNumber,
+//   "Is Prime": isPrime,
+//   Factorial: factorial,
+//   Fibonacci: fibonacci,
+//   "Sum of Digits": sumOfDigits,
+//   "Reverse of Number": reverseNumber,
+//   "Greatest Common Divisor": gcd,
+//   "Least Common Multiple": lcm,
+// };
 
 export const stringFunctions = {
   "Alternate Case": alternateCase,
@@ -58,20 +111,6 @@ export const stringFunctions = {
   "ASCII String": stringToAscii,
 };
 
-export const NUMBER_OPTIONS = [
-  "Number to HEX",
-  "HEX to Number",
-  "Number to Binary",
-  "Binary to Number",
-  "Is Prime",
-  "Factorial",
-  "Fibonacci",
-  "Sum of Digits",
-  "Reverse of Number",
-  "Greatest Common Divisor",
-  "Least Common Multiple",
-];
-
 export const numberFunctions = {
   "Number to HEX": numberToHex,
   "HEX to Number": hexToNumber,
@@ -85,3 +124,20 @@ export const numberFunctions = {
   "Greatest Common Divisor": gcd,
   "Least Common Multiple": lcm,
 };
+
+export const dateFunctions = {
+  "Current Date": getCurrentDate,
+  "Is Weekend": isWeekend,
+  "Is leap year": isLeapYear,
+  "Calculate Age": calculateAge,
+  "First Day of Month": getFirstDayOfMonth,
+  "Last Day of Month": getLastDayOfMonth,
+  "Timestamp to Dates": convertTimestampToDate,
+  "Days b/w Dates": getDaysBetweenDates,
+  "Add Days to Date": addDaysToDate,
+};
+
+// Generate options from the keys of the functions
+export const STRING_OPTIONS = Object.keys(stringFunctions);
+export const NUMBER_OPTIONS = Object.keys(numberFunctions);
+export const DATE_OPTIONS = Object.keys(dateFunctions);
