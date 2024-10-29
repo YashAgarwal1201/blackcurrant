@@ -7,7 +7,8 @@ const SpeechRecognitionSupport = ({ baseStyle }: { baseStyle: string }) => {
   useEffect(() => {
     const checkSpeechRecognitionSupport = () => {
       const SpeechRecognition =
-        window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+        (window as any).SpeechRecognition ||
+        (window as any).webkitSpeechRecognition;
       setIsSupported(!!SpeechRecognition);
     };
 

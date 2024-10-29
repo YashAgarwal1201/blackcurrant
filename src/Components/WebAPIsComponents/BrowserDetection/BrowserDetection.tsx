@@ -55,7 +55,6 @@
 
 // export default BrowserDetection;
 
-
 // import React, { useState, useEffect } from "react";
 // import { Card } from "primereact/card"; // Assuming PrimeReact is installed
 
@@ -130,8 +129,7 @@
 
 // export default BrowserDetection;
 
-
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "primereact/card"; // Assuming PrimeReact is installed
 
 const BrowserDetection = ({ baseStyle }: { baseStyle: string }) => {
@@ -144,18 +142,30 @@ const BrowserDetection = ({ baseStyle }: { baseStyle: string }) => {
 
       if (userAgent.indexOf("Firefox") > -1) {
         return "Mozilla Firefox";
-      } else if (userAgent.indexOf("OPR") > -1 || userAgent.indexOf("Opera") > -1) {
+      } else if (
+        userAgent.indexOf("OPR") > -1 ||
+        userAgent.indexOf("Opera") > -1
+      ) {
         return "Opera";
       } else if (userAgent.indexOf("Edg") > -1) {
         return "Microsoft Edge";
       } else if (userAgent.indexOf("SamsungBrowser") > -1) {
         return "Samsung Internet";
-      } else if (userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1) {
+      } else if (
+        userAgent.indexOf("Chrome") > -1 &&
+        userAgent.indexOf("Safari") > -1
+      ) {
         // This check should come after specific checks for Edge and Samsung Internet
         return "Google Chrome"; // Chrome often includes "Safari" in its user agent
-      } else if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") === -1) {
+      } else if (
+        userAgent.indexOf("Safari") > -1 &&
+        userAgent.indexOf("Chrome") === -1
+      ) {
         return "Apple Safari";
-      } else if (userAgent.indexOf("Trident/") > -1 || userAgent.indexOf("MSIE ") > -1) {
+      } else if (
+        userAgent.indexOf("Trident/") > -1 ||
+        userAgent.indexOf("MSIE ") > -1
+      ) {
         return "Internet Explorer";
       } else {
         return "Unknown Browser";
@@ -169,7 +179,10 @@ const BrowserDetection = ({ baseStyle }: { baseStyle: string }) => {
         return "Gecko";
       } else if (userAgent.indexOf("AppleWebKit/") > -1) {
         return "WebKit";
-      } else if (userAgent.indexOf("Trident/") > -1 || userAgent.indexOf("MSIE ") > -1) {
+      } else if (
+        userAgent.indexOf("Trident/") > -1 ||
+        userAgent.indexOf("MSIE ") > -1
+      ) {
         return "Trident/MSIE";
       } else {
         return "Unknown Engine";

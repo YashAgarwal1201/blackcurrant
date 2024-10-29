@@ -1,4 +1,4 @@
-import { Key, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
