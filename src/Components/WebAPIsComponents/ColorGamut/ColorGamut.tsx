@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "primereact/card"; // Assuming PrimeReact is installed
 
 const ColorGamutSupport = ({ baseStyle }: { baseStyle: string }) => {
@@ -6,7 +6,7 @@ const ColorGamutSupport = ({ baseStyle }: { baseStyle: string }) => {
 
   useEffect(() => {
     const checkColorGamutSupport = () => {
-      const supportedGamuts = [];
+      const supportedGamuts: any = [];
 
       // Check for DCI-P3 (Wide Gamut) support
       const dciP3MediaQuery = window.matchMedia("(color-gamut: display-p3)");

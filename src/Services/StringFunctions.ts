@@ -26,7 +26,7 @@ export function alternateCase(input) {
 export function toCamelCase(input) {
   return input
     .toLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase());
+    .replace(/[^a-zA-Z0-9]+(.)/g, (chr) => chr.toUpperCase());
 }
 
 export function toPascalCase(input: string) {

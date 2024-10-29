@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "../../Layout/Layout";
 import { DATE_OPTIONS, dateFunctions } from "../../Services/Constants";
 import { Button } from "primereact/button";
@@ -34,6 +34,8 @@ const PlayWithDatesPage = () => {
 
   const inputDate = watch("inputDate");
   const secondDate = watch("secondDate");
+
+  console.log(secondDate);
 
   const handleDateFunction = (inputString, secondString) => {
     const parsedDate = new Date(inputString);
